@@ -63,6 +63,12 @@ public class Complex {
         result.setImaginary(this.getImaginary()/factor);
         return result;
     } 
+    public Complex multiply(double factor){
+        Complex result = new Complex();
+        result.setReal(this.getReal()*factor);
+        result.setImaginary(this.getImaginary()*factor);
+        return result;
+    }
 
     @Override
     public String toString(){
