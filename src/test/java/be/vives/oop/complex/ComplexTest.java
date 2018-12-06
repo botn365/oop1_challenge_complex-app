@@ -150,13 +150,14 @@ public class ComplexTest {
     assertEquals(-8, result.getReal(), delta);
     assertEquals(-12, result.getImaginary(), delta);
   }
+  @Test
   public void testDevideImaginary() {
     Complex first = new Complex(25, 9);
     Complex second = new Complex(33,4);
 
     Complex result = first.divide(second);
 
-    assertEquals((861/1105), result.getReal(), delta);
-    assertEquals((197/1105), result.getImaginary(), delta);
+    assertEquals(((double)861/1105), result.getReal(), delta);
+    assertEquals(((double)197/1105), result.getImaginary(), delta);
   }
 }
