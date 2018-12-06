@@ -140,13 +140,14 @@ public class ComplexTest {
     assertEquals(12.5, result.getReal(), delta);
     assertEquals(-1.5, result.getImaginary(), delta);
   }
+  @Test
   public void testSubtractImaginairy() {
     Complex first = new Complex(25, -3);
     Complex second = new Complex(33,9);
 
     Complex result = first.subtract(second);
 
-    assertEquals(8, result.getReal(), delta);
+    assertEquals(-8, result.getReal(), delta);
     assertEquals(-12, result.getImaginary(), delta);
   }
 }
