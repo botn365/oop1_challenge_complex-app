@@ -44,6 +44,19 @@ public class Complex {
         result.setImaginary(this.getReal()*second.getImaginary()+this.getImaginary()*second.getReal());
         return result;
     } 
+    public Complex divide(Complex second){
+        Complex result = new Complex();
+        result.setReal((this.getReal()*second.getReal()
+            +this.getImaginary()*second.getImaginary())
+            /(second.getReal()*second.getReal()
+            +second.getImaginary()*second.getImaginary())
+            );
+        result.setImaginary((this.getImaginary()*second.getReal()-
+            this.getReal()*second.getImaginary())
+            /(second.getReal()*second.getReal()
+            +second.getImaginary()*second.getImaginary()));
+        return result;
+    }  
 
     @Override
     public String toString(){
