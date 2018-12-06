@@ -38,6 +38,13 @@ public class Complex {
         result.setImaginary(this.getImaginary()-second.getImaginary());
         return result;
     }
+    public Complex multiply(Complex second){
+        Complex result = new Complex();
+        result.setReal(this.getReal()*second.getReal()-this.getImaginary()*second.getImaginary());
+        result.setImaginary(this.getReal()*second.getImaginary()+this.getImaginary()*second.getReal());
+        return result;
+    } 
+
     @Override
     public String toString(){
         if(this.getImaginary()<0){
