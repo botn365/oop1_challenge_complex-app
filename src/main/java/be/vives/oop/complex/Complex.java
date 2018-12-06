@@ -56,7 +56,13 @@ public class Complex {
             /(second.getReal()*second.getReal()
             +second.getImaginary()*second.getImaginary()));
         return result;
-    }  
+    } 
+    public Complex divide(double factor){
+        Complex result = new Complex();
+        result.setReal(this.getReal()/factor);
+        result.setImaginary(this.getImaginary()/factor);
+        return result;
+    } 
 
     @Override
     public String toString(){
