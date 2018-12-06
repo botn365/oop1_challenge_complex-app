@@ -26,6 +26,16 @@ public class Complex {
     public double getImaginary(){
         return imaginair;
     }
+    public Complex add(Complex second){
+        Complex result = new Complex();
+        result.setImaginary(this.getImaginary());
+        result.setReal(this.getRael());
+        return result;
+    }
+    @Override
+    public String toString(){
+        return this.getRael()+" + "+this.getImaginary()+"i";
+    }
 
 
     //privare
