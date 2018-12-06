@@ -12,7 +12,7 @@ public class Complex {
         this.setImaginary(imaginair);
     }
     public Complex(Complex original){
-        this(original.getRael(),original.getImaginary());
+        this(original.getReal(),original.getImaginary());
     }
     public void setReal(double real){
         this.real=real;
@@ -20,7 +20,7 @@ public class Complex {
     public void setImaginary(double imaginair){
         this.imaginair=imaginair;
     }
-    public double getRael(){
+    public double getReal(){
         return real;
     }
     public double getImaginary(){
@@ -28,13 +28,25 @@ public class Complex {
     }
     public Complex add(Complex second){
         Complex result = new Complex();
-        result.setImaginary(this.getImaginary());
-        result.setReal(this.getRael());
+        result.setReal(this.getReal()+second.getReal());
+        result.setImaginary(this.getImaginary()+second.getImaginary());
+        return result;
+    }
+    public Complex subtract(Complex second){
+        Complex result = new Complex();
+        result.setReal(this.getReal()-second.getReal());
+        result.setImaginary(this.getImaginary()-second.getImaginary());
         return result;
     }
     @Override
     public String toString(){
-        return this.getRael()+" + "+this.getImaginary()+"i";
+        if(this.getImaginary()<0){
+            return "("+this.getReal()+" - "+Math.abs(this.getImaginary()) +"j)";
+        }
+        else{
+            return "("+this.getReal()+" + "+this.getImaginary()+"j)";
+        }
+        
     }
 
 
